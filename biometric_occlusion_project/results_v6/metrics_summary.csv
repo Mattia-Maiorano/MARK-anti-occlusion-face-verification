@@ -1,0 +1,5 @@
+Condition,Holistic_EER_%,PatchOnly_EER_%,Hybrid_EER_%,Holistic_AUC,PatchOnly_AUC,Hybrid_AUC
+Baseline,2.33,5.52,1.67,0.9983,0.9921,0.9987
+Lower_Occlusion,4.00,10.20,3.83,0.9879,0.9704,0.9926
+Upper_Occlusion,10.00,13.38,8.00,0.9676,0.9485,0.9766
+Dual_Occlusion,42.00,33.33,18.18,0.5948,0.7604,0.9011

@@ -1,0 +1,173 @@
+{
+  "architecture_version": "M.A.R.K. v4 (Dynamic Normalized Z-Fusion)",
+  "backbone_model": "FaceRecognizerSF (SFace ONNX)",
+  "embedding_dim": 128,
+  "parameters": {
+    "patch_priors": [
+      0.05,
+      0.55,
+      0.15,
+      0.25
+    ],
+    "holistic_prior": 1.0,
+    "min_entropy_threshold": 0.15,
+    "scaler_mean": [
+      0.6278141584596131,
+      0.9293048406796602,
+      0.8793354164316164,
+      0.7702945333692167,
+      0.9565919128823028
+    ],
+    "scaler_scale": [
+      0.18199442268530525,
+      0.1612874306879486,
+      0.22542775781253477,
+      0.24394731552761634,
+      0.1304547917566127
+    ],
+    "operational_eer_thresholds": {
+      "Baseline": -1.6446646362642108,
+      "Lower_Occlusion": -1.5088302747694817,
+      "Upper_Occlusion": -1.0768602836650478,
+      "Dual_Occlusion": 0.22984662277109846
+    }
+  },
+  "exported_cases": {
+    "TA": {
+      "image_filename": "01_correct_matching.png",
+      "case_title": "Correct Match (True Accept)",
+      "mode": "Baseline",
+      "probe_pid": "0018",
+      "gallery_pid": "0018",
+      "ground_truth": "genuine",
+      "decision": "ACCEPTED",
+      "score": -1.8869587180351628,
+      "threshold": -1.6446646362642108,
+      "status": "VALID",
+      "active_entropy": 0.8026300370693207,
+      "raw_distances": [
+        0.2534944415092468,
+        0.6250464618206024,
+        0.8805501833558083,
+        0.6273194551467896,
+        0.5943798124790192
+      ],
+      "exposure_scores": [
+        0.0,
+        0.40023306012153625,
+        0.4960906207561493,
+        0.5680146813392639
+      ],
+      "normalized_weights": [
+        0.0,
+        0.2742585910073948,
+        0.09271219575226977,
+        0.17692294553705018,
+        0.4561062677032853
+      ],
+      "forensic_commentary": "Genuine subject 0018 successfully authenticated. Fused Z-score (-1.8870) comfortably below EER threshold (-1.6447)."
+    },
+    "TR": {
+      "image_filename": "02_correct_refused.png",
+      "case_title": "Correct Refused (True Reject)",
+      "mode": "Baseline",
+      "probe_pid": "0018",
+      "gallery_pid": "0001",
+      "ground_truth": "impostor",
+      "decision": "REFUSED",
+      "score": 0.19814261069519604,
+      "threshold": -1.6446646362642108,
+      "status": "VALID",
+      "active_entropy": 0.8026300370693207,
+      "raw_distances": [
+        0.6939981877803802,
+        1.0079441741108894,
+        0.711069256067276,
+        0.552399218082428,
+        1.0400102026760578
+      ],
+      "exposure_scores": [
+        0.0,
+        0.40023306012153625,
+        0.4960906207561493,
+        0.5680146813392639
+      ],
+      "normalized_weights": [
+        0.0,
+        0.2742585910073948,
+        0.09271219575226977,
+        0.17692294553705018,
+        0.4561062677032853
+      ],
+      "forensic_commentary": "Impostor probe 0018 tested against gallery 0001. Verification correctly rejected (Score 0.1981 > Threshold -1.6447)."
+    },
+    "FA": {
+      "image_filename": "03_wrongly_matching.png",
+      "case_title": "Wrongly Matching (False Accept)",
+      "mode": "Upper_Occlusion",
+      "probe_pid": "0018",
+      "gallery_pid": "0023",
+      "ground_truth": "impostor",
+      "decision": "ACCEPTED",
+      "score": -1.1838235247495261,
+      "threshold": -1.0768602836650478,
+      "status": "VALID",
+      "active_entropy": 0.48244358897209166,
+      "raw_distances": [
+        0.6404849588871002,
+        1.0604892447590828,
+        0.6440985202789307,
+        0.580967515707016,
+        0.76864393055439
+      ],
+      "exposure_scores": [
+        0.0,
+        0.0,
+        0.4960906207561493,
+        0.5680146813392639
+      ],
+      "normalized_weights": [
+        0.0,
+        0.0,
+        0.15424309663223043,
+        0.2943425378236928,
+        0.5514143655440769
+      ],
+      "forensic_commentary": "False Accept security breach: Impostor 0018 incorrectly verified as gallery 0023. Upper Occlusion degraded facial discriminability, pulling score below threshold."
+    },
+    "FR": {
+      "image_filename": "04_wrongly_refused.png",
+      "case_title": "Wrongly Refused (False Reject)",
+      "mode": "Upper_Occlusion",
+      "probe_pid": "0018",
+      "gallery_pid": "0018",
+      "ground_truth": "genuine",
+      "decision": "REFUSED",
+      "score": -0.6448046046242976,
+      "threshold": -1.0768602836650478,
+      "status": "VALID",
+      "active_entropy": 0.48244358897209166,
+      "raw_distances": [
+        0.6371400058269501,
+        1.0053055440075696,
+        0.8805501833558083,
+        0.6273194551467896,
+        0.8446590900421143
+      ],
+      "exposure_scores": [
+        0.0,
+        0.0,
+        0.4960906207561493,
+        0.5680146813392639
+      ],
+      "normalized_weights": [
+        0.0,
+        0.0,
+        0.15424309663223043,
+        0.2943425378236928,
+        0.5514143655440769
+      ],
+      "forensic_commentary": "False Reject: Genuine subject 0018 incorrectly refused under Upper Occlusion. Occlusion elevated the fused distance to -0.6448, exceeding the decision boundary."
+    }
+  }
+}

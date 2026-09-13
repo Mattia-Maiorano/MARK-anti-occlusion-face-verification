@@ -1,0 +1,61 @@
+# macOS System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Data & Datasets (Large image datasets)
+P1E_S1/
+P2E_S5/
+groundtruth/
+biometric_occlusion_project/data/
+*.jpg
+*.jpeg
+*.png
+!biometric_occlusion_project/audit_packet/*.png
+!biometric_occlusion_project/results/*.png
+!biometric_occlusion_project/results_v6/*.png
+
+# Model Checkpoints & Large Weights
+*.pth
+*.onnx
+*.bin
+*.pt
+models/
+biometric_occlusion_project/models/*.pth
+biometric_occlusion_project/models/*.onnx
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output & Logs
+*.log
+biometric_occlusion_project/results_v6/training_tmp/

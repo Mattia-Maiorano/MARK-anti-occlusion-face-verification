@@ -35,24 +35,26 @@ Standard deep convolutional face recognizers rely heavily on full facial geometr
 
 ```
 MARK-anti-occlusion-face-verification/
-├── biometric_occlusion_project/
-│   ├── src/                         # Core Python modules
-│   │   ├── spatial_slicer.py        # Anatomical 4-zone facial crop & alignment
-│   │   ├── occlusion_estimator.py   # YCrCb & Sobel exposure estimation
-│   │   ├── embedder.py              # FaceRecognizerSF ONNX feature extraction
-│   │   ├── dynamic_matcher.py       # Learned Score-Level Gating (v6) & calibration
-│   │   └── evaluation.py            # Benchmark metrics, EER & ROC computation
-│   ├── demo/
-│   │   ├── live_camera_matcher.py   # Interactive webcam HUD verification tool
-│   │   └── live_visualizer.py       # Synthetic probe & occlusion visualizer
-│   ├── audit_packet/                # Forensic security audit benchmarks & charts
-│   ├── results_v6/                  # EER, ROC, DET curves & metric summaries
-│   ├── main.py                      # Batch benchmark runner
-│   ├── calibrate_live_domain.py     # Live camera domain calibration script
-│   ├── OVERVIEW.md                  # System architecture overview
-│   ├── LIVE_DEMO.md                # HUD display details & live demo guide
-│   ├── ACCOMPLISHMENTS_v7.md        # Comprehensive technical report
-│   └── requirements.txt             # Python dependencies
+├── docs/                            # Comprehensive documentation, history, and overviews
+│   ├── ACCOMPLISHMENTS.md
+│   ├── ACCOMPLISHMENTS_v7.md
+│   ├── HISTORY.md
+│   ├── LIVE_DEMO.md
+│   └── OVERVIEW.md
+├── src/                             # Core Python modules
+│   ├── spatial_slicer.py            # Anatomical 4-zone facial crop & alignment
+│   ├── occlusion_estimator.py       # YCrCb & Sobel exposure estimation
+│   ├── embedder.py                  # FaceRecognizerSF ONNX feature extraction
+│   ├── dynamic_matcher.py           # Learned Score-Level Gating (v6) & calibration
+│   └── evaluation.py                # Benchmark metrics, EER & ROC computation
+├── demo/
+│   ├── live_camera_matcher.py       # Interactive webcam HUD verification tool
+│   └── live_visualizer.py           # Synthetic probe & occlusion visualizer
+├── audit_packet/                    # Forensic security audit benchmarks & charts
+├── results_v6/                      # EER, ROC, DET curves & metric summaries
+├── main.py                          # Batch benchmark runner
+├── calibrate_live_domain.py         # Live camera domain calibration script
+├── requirements.txt                 # Python dependencies
 └── .gitignore                       # Clean Git configuration
 ```
 
@@ -66,13 +68,13 @@ Clone the repository and install the dependencies:
 
 ```bash
 git clone git@github.com:Mattia-Maiorano/MARK-anti-occlusion-face-verification.git
-cd MARK-anti-occlusion-face-verification/biometric_occlusion_project
+cd MARK-anti-occlusion-face-verification
 pip install -r requirements.txt
 ```
 
 ### 2. Download Pretrained Models
 
-Place the required ONNX model weights inside `biometric_occlusion_project/models/`:
+Place the required ONNX model weights inside `models/`:
 - `face_recognizer_fast.onnx` (FaceRecognizerSF)
 - `face_detection_yunet_2023mar.onnx` (YuNet Detector)
 
@@ -90,9 +92,9 @@ python demo/live_camera_matcher.py \
 
 ## Documentation
 
-- **[Architecture Overview](biometric_occlusion_project/OVERVIEW.md)**: Deep dive into anatomical slicing, exposure estimation, and fusion mechanics.
-- **[Live Demo Guide](biometric_occlusion_project/LIVE_DEMO.md)**: Guide to running the real-time webcam HUD matcher.
-- **[Technical Report (v7)](biometric_occlusion_project/ACCOMPLISHMENTS_v7.md)**: Quantitative evaluation benchmarks, forensic security analysis, and v1–v6 architectural evolution.
+- **[Architecture Overview](docs/OVERVIEW.md)**: Deep dive into anatomical slicing, exposure estimation, and fusion mechanics.
+- **[Live Demo Guide](docs/LIVE_DEMO.md)**: Guide to running the real-time webcam HUD matcher.
+- **[Technical Report (v7)](docs/ACCOMPLISHMENTS_v7.md)**: Quantitative evaluation benchmarks, forensic security analysis, and v1–v6 architectural evolution.
 
 ---
 

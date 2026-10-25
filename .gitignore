@@ -33,13 +33,13 @@ wheels/
 P1E_S1/
 P2E_S5/
 groundtruth/
-biometric_occlusion_project/data/
+data/
 *.jpg
 *.jpeg
 *.png
-!biometric_occlusion_project/audit_packet/*.png
-!biometric_occlusion_project/results/*.png
-!biometric_occlusion_project/results_v6/*.png
+!audit_packet/*.png
+!results/*.png
+!results_v6/*.png
 
 # Model Checkpoints & Large Weights
 *.pth
@@ -47,8 +47,8 @@ biometric_occlusion_project/data/
 *.bin
 *.pt
 models/
-biometric_occlusion_project/models/*.pth
-biometric_occlusion_project/models/*.onnx
+models/*.pth
+models/*.onnx
 
 # IDE & Editor files
 .vscode/
@@ -58,4 +58,4 @@ biometric_occlusion_project/models/*.onnx
 
 # Output & Logs
 *.log
-biometric_occlusion_project/results_v6/training_tmp/
+results_v6/training_tmp/
